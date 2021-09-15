@@ -42,6 +42,7 @@ document.getElementById("petsave-button").onclick = function () {
 		petPotencialInput: document.getElementById("potencialmente").value,
 		petEsterilizadoInput: document.getElementById("esterilizado").value,
 		petLocationInput: document.getElementById("location-input").value
+		
 	};  
 
     var request = indexedDB.open(dbName, 2);

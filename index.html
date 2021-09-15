@@ -8,30 +8,30 @@
     </head>
         <body>
             
-            <div class="w3-container">
-            <table class="w3-table-all w3-centered">
-                
+           
+            
+           <div class="container">     
             <h1>Ciudadanos de 4 patas</h1>
-            <select id="dogbreed-input"></select>
-            <button id="show-dog-image">Mostrar perro</button>
-            <img id="dog-image" src="https://images.dog.ceo/breeds/hound-ibizan/n02091244_5038.jpg">
-            <br />
 
-         <select id="catbreed-input"></select>
-		 <button id="show-cat-image">Mostrar gato</button>
-		 <img id="cat-image" src="https://cdn2.thecatapi.com/images/A3F5LRZ8L.jpg">
-
-		 <br /><br />
+            <select id="dogbreed-input"> </select>
+            <button id="show-dog-image">Mostrar perro </button>
+            <img id="dog-image"src="https://images.dog.ceo/breeds/hound-ibizan/n02091244_5038.jpg">
+           
+            <br /> <br/>
+            <select id="catbreed-input"></select>
+            <button id="show-cat-image">Mostrar gato</button>
+            <img id="cat-image"src="https://cdn2.thecatapi.com/images/A3F5LRZ8L.jpg">
     
             <br /><br />
+
             <p>Bienvenido, por favor diligencie el siguiente formulario
                 para registrar una nueva mascota
             </p>
             Fecha de registro: <input id="date-input" type="date";>
             <br />
-             Nombre del propietario: <input id="owner-input" type="text">
+            Nombre del propietario: <input id="owner-input" type="text">
             <br />
-              Nombre de la mascota: <input id="petname-input" type="text">
+            Nombre de la mascota: <input id="petname-input" type="text">
             <br />
                Microchip: <input id="microchip-input" type="number">
             <br />
@@ -52,17 +52,17 @@
                  <option>Grande</option>
                  </select>
             <br />
-                  Potencialmente peligrosa : <select id = "Potencialmente">
+                  Potencialmente peligrosa : <select id = "potencialmente">
                     <option> Si </option>
                     <option> No </option>
                     </select>
             <br />
-                    Esterilizado: <select id = "Esterilizado">
+                    Esterilizado: <select id = "esterilizado">
                         <option> Si </option>
                         <option> No </option>
                     </select>
                     <br />
-                     Localidad: <select id="localidad-input">
+                     Localidad: <select id="location-input">
                         <option> Antonio Nariño </option>
                         <option> Barrios Unidos </option>
                         <option> Bosa </option>
@@ -84,29 +84,34 @@
                         <option> Usaquen </option>
                         <option> Usme </option>
                      </select>
-                     <input id="petsave-button" type="button" value="Guardar" />
-		             <input id="petclean-button" type="button" value="Limpiar" />
-        <br /> <br /><br />         
-         <table>
-                <thead>
-                    <tbody>
-                        <th class=" column-header">Fecha de registro</th>
-                        <th class=" column-header">Nombre del propietario</th>
-                        <th class=" column-header">Nombre de la mascota</th>
-                        <th class=" column-header">Microchip</th>
-                        <th class=" column-header">Especie</th>
-                        <th class=" column-header">Sexo</th>
-                        <th class=" column-header">Tamaño</th>
-                        <th class=" column-header">Potencialmente</th>
-                        <th class=" column-header">Esterilizado</th>
-                        <th class=" column-header">Localidad</th>
+                     <br>
+                    <input id="petsave-button" type="button" value="Guardar" />
+                    <br>
+		            <input id="petclean-button" type="button" value="Limpiar" />
+                     <br /> <br /><br />
+                     
+                    </div>
+                     <table>
+                        <thead>
+                            <th class=" column-header column-header-id">ID</th>
+                            <th class=" column-header">Fecha de registro</th>
+                            <th class=" column-header">Nombre del propietario</th>
+                            <th class=" column-header">Nombre de la mascota</th>
+                            <th class=" column-header">Microchip</th>
+                            <th class=" column-header">Especie</th>
+                            <th class=" column-header">Sexo</th>
+                            <th class=" column-header">Tamaño</th>
+                            <th class=" column-header">Acciones</th>
+                        </thead>
+                         <tbody id="body-table">
+                       
+
                         
                     </tbody>
-                </thead>
+                
             </table>
-        </table>
        
-        <script src="C:\Users\Cristian Vaca\Taller2\Taller2\js\main.js"></script>
+        <script src="js/main.js"></script>
         </body>
     
 </html>

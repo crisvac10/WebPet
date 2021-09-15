@@ -106,17 +106,6 @@ fetch('https://dog.ceo/api/breeds/list/all')
 
 		});
 
-		// Updating select value based on cookie
-		let cookies = document.cookie.split(";").map(cookie => {
-			let cookieSplitted = cookie.split("=");
-			let newCookie = {};
-			newCookie[cookieSplitted[0]] = cookieSplitted[1];
-			return newCookie;
-		} );
-		document.getElementById("dogbreed-input").value = cookies[0].dogBreed;
-
-	});
-
 document.getElementById("show-dog-image").onclick = function () {
 
 	let breed = document.getElementById("dogbreed-input").value;
@@ -145,9 +134,6 @@ fetch('https://api.thecatapi.com/v1/breeds')
 
 		});
 
-		// Updating select value based on cookie
-		let myLocalStorage = window.localStorage;
-		document.getElementById("catbreed-input").value = myLocalStorage.getItem("catBreed");
 		
 	});
 
@@ -164,25 +150,3 @@ document.getElementById("show-cat-image").onclick = function () {
 		});
 
 };
-
-/*
- * Experimenting with cookies, storage and IndexedDB
- */
-
-document.getElementById("dogbreed-input").onchange = function () {
-
-	let dogBreed = document.getElementById("dogbreed-input").value;
-	console.log(dogBreed);
-	document.cookie = "dogBreed=" + dogBreed;
-
-};
-
-document.getElementById("catbreed-input").onchange = function () {
-
-	let catBreed = document.getElementById("catbreed-input").value;
-	console.log(catBreed);
-	let myLocalStorage = window.localStorage;
-	myLocalStorage.setItem('catBreed', catBreed);
-
-};
-

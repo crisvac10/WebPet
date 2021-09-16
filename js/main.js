@@ -1,4 +1,5 @@
 var rowId = 0;
+
 var catBreeds = [];
 
 var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
@@ -63,7 +64,6 @@ document.getElementById("petsave-button").onclick = function () {
 		petSizeInput: document.getElementById("petsize-input").value,
 		petPotencialInput: document.getElementById("potencialmente").value,
 		petEsterilizadoInput: document.getElementById("esterilizado").value,
-    petLocationInput: document.getElementById("location-input").value,
 
 	};  
 
@@ -94,18 +94,23 @@ document.getElementById("petsave-button").onclick = function () {
 
 	});
 
+
+
+
+}
+
+
 	let tdActions = document.createElement("td");
 	
 	let input = document.createElement("input");
-	input.setAttribute("id", "delete-" + rowId);
+	input.setAttribute("id", "edit" + rowId);
 	input.setAttribute("type", "button");
-	input.value = "Eliminar";
-	input.onclick = function () {
+	input.value = "Editar";
+	input.onclick = function modifica () {
 		let id = this.getAttribute("id");
-		id = +id.replace("delete-", "");
-
-		document.getElementById("row-" + id).remove();
-	};
+	
+	
+	
 
 	tdActions.appendChild(input);
 	
@@ -113,7 +118,7 @@ document.getElementById("petsave-button").onclick = function () {
 
 	document.getElementById("body-table").appendChild(tr);
 
-};
+
 
 /*
  * Code for calling and using results from DOG and CAT APIs
@@ -213,4 +218,4 @@ document.getElementById("catbreed-input").onchange = function () {
 	myLocalStorage.setItem('catBreed', catBreed);
 
 };
-
+	}

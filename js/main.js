@@ -1,6 +1,4 @@
 var rowId = 0;
-
-var rowId = 0;
 var catBreeds = [];
 
 var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
@@ -27,6 +25,26 @@ request.onsuccess = function(event) {
 	  rowId = event.target.result.length;
 	};
 };
+
+let tdActions = document.createElement("td");
+	
+	let input = document.createElement("input");
+	input.setAttribute("id", "delete-" + rowId);
+	input.setAttribute("type", "button");
+	input.value = "Eliminar";
+	input.onclick = function () {
+		let id = this.getAttribute("id");
+		id = +id.replace("delete-", "");
+
+		document.getElementById("row-" + id).remove();
+	};
+
+	tdActions.appendChild(input);
+	
+	tr.appendChild(tdActions);
+
+	document.getElementById("body-table").appendChild(tr);
+
 
 document.getElementById("petsave-button").onclick = function () {
 	rowId += 1;

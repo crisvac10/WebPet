@@ -1,6 +1,5 @@
 var rowId = 0;
 
-var rowId = 0;
 var catBreeds = [];
 
 var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
@@ -35,8 +34,13 @@ document.getElementById("petsave-button").onclick = function () {
 		dateInput: document.getElementById("date-input").value,
 		ownerInput: document.getElementById("owner-input").value,
 		petNameInput: document.getElementById("petname-input").value,
-		petSpeciesInput: document.getElementById("petspecies-input").value,
+		microchipInput: +document.getElementById("microchip-input").value,
+		petSpeciesInput: document.getElementById("petspecie-input").value,
+		petSexInput: document.getElementById("petsex-input").value,
 		petSizeInput: document.getElementById("petsize-input").value,
+		petPotencialInput: document.getElementById("potencialmente").value,
+		petEsterilizadoInput: document.getElementById("esterilizado").value,
+		petLocationInput: document.getElementById("location-input").value,
 	};  
 
     var request = indexedDB.open(dbName, 2);
@@ -66,18 +70,23 @@ document.getElementById("petsave-button").onclick = function () {
 
 	});
 
+
+
+
+}
+
+
 	let tdActions = document.createElement("td");
 	
 	let input = document.createElement("input");
-	input.setAttribute("id", "delete-" + rowId);
+	input.setAttribute("id", "edit" + rowId);
 	input.setAttribute("type", "button");
-	input.value = "Eliminar";
-	input.onclick = function () {
+	input.value = "Editar";
+	input.onclick = function modifica () {
 		let id = this.getAttribute("id");
-		id = +id.replace("delete-", "");
-
-		document.getElementById("row-" + id).remove();
-	};
+	
+	
+	
 
 	tdActions.appendChild(input);
 	
@@ -85,7 +94,7 @@ document.getElementById("petsave-button").onclick = function () {
 
 	document.getElementById("body-table").appendChild(tr);
 
-};
+
 
 /*
  * Code for calling and using results from DOG and CAT APIs
@@ -105,6 +114,17 @@ fetch('https://dog.ceo/api/breeds/list/all')
 			petBreed.appendChild(option);
 
 		});
+
+		// Updating select value based on cookie
+		let cookies = document.cookie.split(";").map(cookie => {
+			let cookieSplitted = cookie.split("=");
+			let newCookie = {};
+			newCookie[cookieSplitted[0]] = cookieSplitted[1];
+			return newCookie;
+		} );
+		document.getElementById("dogbreed-input").value = cookies[0].dogBreed;
+
+	});
 
 document.getElementById("show-dog-image").onclick = function () {
 
@@ -134,6 +154,9 @@ fetch('https://api.thecatapi.com/v1/breeds')
 
 		});
 
+		// Updating select value based on cookie
+		let myLocalStorage = window.localStorage;
+		document.getElementById("catbreed-input").value = myLocalStorage.getItem("catBreed");
 		
 	});
 
@@ -150,3 +173,25 @@ document.getElementById("show-cat-image").onclick = function () {
 		});
 
 };
+
+/*
+ * Experimenting with cookies, storage and IndexedDB
+ */
+
+document.getElementById("dogbreed-input").onchange = function () {
+
+	let dogBreed = document.getElementById("dogbreed-input").value;
+	console.log(dogBreed);
+	document.cookie = "dogBreed=" + dogBreed;
+
+};
+
+document.getElementById("catbreed-input").onchange = function () {
+
+	let catBreed = document.getElementById("catbreed-input").value;
+	console.log(catBreed);
+	let myLocalStorage = window.localStorage;
+	myLocalStorage.setItem('catBreed', catBreed);
+
+};
+	}

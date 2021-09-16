@@ -93,7 +93,6 @@
                     </div>
                      <table>
                         <thead>
-                            <th class=" column-header column-header-id">ID</th>
                             <th class=" column-header">Fecha de registro</th>
                             <th class=" column-header">Nombre del propietario</th>
                             <th class=" column-header">Nombre de la mascota</th>
@@ -101,6 +100,8 @@
                             <th class=" column-header">Especie</th>
                             <th class=" column-header">Sexo</th>
                             <th class=" column-header">Tamaño</th>
+                            <th class=" column-header">Potencialmente</th>
+                            <th class=" column-header">Localidad</th>
                             <th class=" column-header">Acciones</th>
                         </thead>
                          <tbody id="body-table">
@@ -111,7 +112,29 @@
                 
             </table>
        
-        <script src="js/main.js"></script>
+        <script src="js/main.js">
+        	var editando = false;
+
+function modifica() {
+    tab=document.getElementById('tabla');
+    for (i=0; ele=tab.getElementsByTagName('input')[i]; i++) {
+      if (ele.checked) edita(ele);
+      ele.checked = false;
+    }
+  }
+  function edita(obj) {
+    padre = obj.parentNode.parentNode;
+    celda = padre.getElementsByTagName('td')[2];
+    txt = celda.innerHTML;
+    celda.innerHTML = '';
+    inp = celda.appendChild(document.createElement('input'));
+    inp.value=txt;
+    inp.onblur = function() { this.parentNode.innerHTML = this.value  }
+  }
+
+
+        </script>
+        <input type="button" value="Modificar" onClick="modifica()" />
         </body>
     
 </html>

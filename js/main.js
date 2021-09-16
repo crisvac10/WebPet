@@ -24,8 +24,32 @@ request.onsuccess = function(event) {
 	objectStore.getAll().onsuccess = function(event) {
 	  console.log(event.target.result);
 	  rowId = event.target.result.length;
+	  
+	  
 	};
+	
+
 };
+
+document.getElementById("petclean-button").onclick = function(){
+
+	let pet = {
+		dateInput: document.getElementById("date-input").value = "",
+		ownerInput: document.getElementById("owner-input").value = "",
+		petNameInput: document.getElementById("petname-input").value = "",
+		microchipInput: document.getElementById("microchip-input").value = "",
+		petSpeciesInput: document.getElementById("petspecie-input").value,
+		petSexInput: document.getElementById("petsex-input").value,
+		petSizeInput: document.getElementById("petsize-input").value, 
+		petPotencialInput: document.getElementById("potencialmente").value,
+		petEsterilizadoInput: document.getElementById("esterilizado").value,
+		petLocationInput: document.getElementById("location-input").value,
+		
+	};  
+
+}
+
+
 
 document.getElementById("petsave-button").onclick = function () {
 	rowId += 1;
@@ -40,7 +64,7 @@ document.getElementById("petsave-button").onclick = function () {
 		petSizeInput: document.getElementById("petsize-input").value,
 		petPotencialInput: document.getElementById("potencialmente").value,
 		petEsterilizadoInput: document.getElementById("esterilizado").value,
-		petLocationInput: document.getElementById("location-input").value,
+
 	};  
 
     var request = indexedDB.open(dbName, 2);

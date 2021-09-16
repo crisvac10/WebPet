@@ -1,29 +1,22 @@
 <html>
     <head>
 
+    <link rel="shortcut icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
         <title>Ciudadanos de 4 patas</title>
 
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style.css" href="https://www.w3schools.com/w3css/4/w3.css">
     
     </head>
         <body>
-            
-           
-            
-           <div class="container">     
-            <h1>Ciudadanos de 4 patas</h1>
 
-            <select id="dogbreed-input"> </select>
-            <button id="show-dog-image">Mostrar perro </button>
-            <img id="dog-image"src="https://images.dog.ceo/breeds/hound-ibizan/n02091244_5038.jpg">
-           
-            <br /> <br/>
-            <select id="catbreed-input"></select>
-            <button id="show-cat-image">Mostrar gato</button>
-            <img id="cat-image"src="https://cdn2.thecatapi.com/images/A3F5LRZ8L.jpg">
+            <div class="container">
+               
+            <h1>Ciudadanos de 4 patas</h1>
     
             <br /><br />
-
+            
             <p>Bienvenido, por favor diligencie el siguiente formulario
                 para registrar una nueva mascota
             </p>
@@ -33,7 +26,7 @@
             <br />
             Nombre de la mascota: <input id="petname-input" type="text">
             <br />
-               Microchip: <input id="microchip-input" type="number">
+               Microchip: <input id="microchip-input" type="text">
             <br />
                 Especie: <select id="petspecie-input">
                  <option> Perro </option>
@@ -89,9 +82,20 @@
                     <br>
 		            <input id="petclean-button" type="button" value="Limpiar" />
                      <br /> <br /><br />
+
+            <div class="margen" >
+                        
+            <select id="dogbreed-input"> </select>
+            <button id="show-dog-image">Mostrar perro </button>
+            <img id="dog-image"src="https://images.dog.ceo/breeds/hound-ibizan/n02091244_5038.jpg">
+        </div> 
+            <br /> <br/>
+            <select id="catbreed-input"></select>
+            <button id="show-cat-image">Mostrar gato</button>
+            <img id="cat-image"src="https://cdn2.thecatapi.com/images/A3F5LRZ8L.jpg">
                      
-                    </div>
-                     <table>
+                    
+                     <table class="table table-bordered table-hover">
                         <thead>
                             <th class=" column-header">Fecha de registro</th>
                             <th class=" column-header">Nombre del propietario</th>
@@ -111,30 +115,7 @@
                     </tbody>
                 
             </table>
-       
-        <script src="js/main.js">
-        	var editando = false;
 
-function modifica() {
-    tab=document.getElementById('tabla');
-    for (i=0; ele=tab.getElementsByTagName('input')[i]; i++) {
-      if (ele.checked) edita(ele);
-      ele.checked = false;
-    }
-  }
-  function edita(obj) {
-    padre = obj.parentNode.parentNode;
-    celda = padre.getElementsByTagName('td')[2];
-    txt = celda.innerHTML;
-    celda.innerHTML = '';
-    inp = celda.appendChild(document.createElement('input'));
-    inp.value=txt;
-    inp.onblur = function() { this.parentNode.innerHTML = this.value  }
-  }
-
-
-        </script>
-        <input type="button" value="Modificar" onClick="modifica()" />
         </body>
     
 </html>

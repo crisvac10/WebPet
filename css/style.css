@@ -1,7 +1,4 @@
-body{
-    background-image: url(./img/Documento\ sin\ título\ \(1\)_page-0001.jpg);
-   background-repeat: no repeat;
-}
+
 
 table{
     border: 1px solid;
@@ -16,7 +13,8 @@ th{
 }
 
 th.column-header{
-    color: blue;
+    border: aqua;
+    
 }
 
 #date-input{

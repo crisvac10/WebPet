@@ -4,4 +4,4 @@ Pagina Web diseñada, con un formulario para ingresar los respectivos datos de l
 se guarda la informacion mediante el uso de cookies, se elimina los datos de la tabla, y se limpia el formulario diligenciado,
 mostramos las respectivas imagenes de las diferentez razas de mascotas (perro o Gato)
 
-https://youtu.be/Q12dEXNzQXQ
+https://youtu.be/MOZPqyw2XtQ
